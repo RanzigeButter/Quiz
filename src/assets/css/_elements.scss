@@ -1,0 +1,85 @@
+/*  ========================================================================
+    # Elements
+    ========================================================================  */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: calc-rem(60px) calc-rem(20px);
+  background-color: $color__black;
+  font-family: $font-family__sans-serif;
+  font-size: $font-size__text;
+  font-weight: 400;
+  color: $color__white;
+  text-align: center;
+}
+
+::selection {
+  background-color: $color__accent;
+  color: $color__black;
+  text-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0;
+  font-family: $font-family__serif;
+  font-weight: 700;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+h1,
+.h1 {
+  @include fluid-type($font-size__h1--min, $font-size__h1--max);
+  margin: 0 0 calc-rem(40px);
+}
+
+h2,
+.h2 {
+  @include fluid-type($font-size__h2--min, $font-size__h2--max);
+}
+
+p {
+  margin: 0 0 calc-rem(20px);
+  line-height: 1.75;
+  hyphens: auto;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  a {
+    @include transition__fade-out(0.25s, 0s);
+    color: $color__accent;
+    border-bottom: calc-rem(1px) solid transparent;
+
+    &:hover {
+      @include transition__fade-in(0.25s, 0s);
+      border-bottom: calc-rem(1px) solid $color__accent;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+}

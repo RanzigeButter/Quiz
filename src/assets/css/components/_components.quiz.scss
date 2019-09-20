@@ -1,0 +1,134 @@
+/*  ========================================================================
+    # Components - Quiz
+    ========================================================================  */
+
+.c-quiz {
+  display: block;
+  max-width: 800px;
+  width: 100%;
+  padding: calc-rem(20px);
+  background-color: $color__black--light;
+  border: calc-rem(1px) solid $color__silver;
+
+  @include breakpoint(small) {
+    padding: calc-rem(40px);
+  }
+
+  &__button {
+    @include transition__fade-out(0.25s, 0s);
+    display: inline-block;
+    margin: calc-rem(40px) 0 0;
+    padding: calc-rem(20px) calc-rem(40px);
+    background-color: $color__black;
+    letter-spacing: calc-rem(1px);
+    color: $color__white;
+
+    &:hover {
+      @include transition__fade-in(0.25s, 0s);
+      background-color: $color__accent;
+      color: $color__black;
+    }
+  }
+}
+
+/*  Intro
+    ======================================================================  */
+
+// .c-intro {
+//
+// }
+
+/*  Questions
+    ======================================================================  */
+
+.c-questions {
+  .top {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 0 calc-rem(40px);
+
+    @include breakpoint(small) {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+
+    .current {
+      margin: 0 0 calc-rem(20px);
+
+      @include breakpoint(small) {
+        margin: 0;
+      }
+    }
+
+    .reset {
+      @include transition__fade-out(0.25s, 0s);
+      color: $color__accent;
+      border-bottom: calc-rem(1px) solid transparent;
+
+      &:hover {
+        @include transition__fade-in(0.25s, 0s);
+        border-bottom: calc-rem(1px) solid $color__accent;
+      }
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &-item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: calc-rem(240px);
+      width: 100%;
+      margin: 0 0 calc-rem(20px);
+      padding: calc-rem(20px);
+      border: calc-rem(2px) solid $color__silver;
+
+      input {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      span {
+        color: $color__grey;
+        letter-spacing: calc-rem(1px);
+      }
+    }
+  }
+
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    margin: calc-rem(40px) 0 0;
+    background-color: $color__silver;
+
+    .bar {
+      @include transition__fade-in(0.2s, 0s);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: $color__accent;
+    }
+  }
+}
+
+/*  Result
+    ======================================================================  */
+
+// .c-result {
+//
+// }

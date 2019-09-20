@@ -1,0 +1,70 @@
+/*  ========================================================================
+    # Settings - Fonts
+    ========================================================================  */
+
+/*  Libre Baskerville
+    ========================================================================  */
+
+// Regular
+@font-face {
+  font-family: 'Libre Baskerville';
+  src:
+    url('../fonts/libre-baskerville--regular.woff2') format('woff2'),
+    url('../fonts/libre-baskerville--regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// 700
+@font-face {
+  font-family: 'Libre Baskerville';
+  src:
+    url('../fonts/libre-baskerville--700.woff2') format('woff2'),
+    url('../fonts/libre-baskerville--700.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*  Noto Sans
+    ========================================================================  */
+
+// Regular
+@font-face {
+  font-family: 'Noto Sans';
+  src:
+    url('../fonts/noto-sans--regular.woff2') format('woff2'),
+    url('../fonts/noto-sans--regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// 700
+@font-face {
+  font-family: 'Noto Sans';
+  src:
+    url('../fonts/noto-sans--700.woff2') format('woff2'),
+    url('../fonts/noto-sans--700.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*  Font Families
+    ========================================================================  */
+
+$font-family__serif: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+$font-family__sans-serif: 'Noto Sans', 'Helvetica', 'Arial', sans-serif;
+
+/*  Font Sizes
+    ========================================================================  */
+
+// H1
+$font-size__h1--max: 2rem; // 32px
+$font-size__h1--min: 1.5rem; // 24px
+
+// H2
+$font-size__h2--max: 1.75rem; // 28px
+$font-size__h2--min: 1.25rem; // 20px
+
+// Text
+$font-size__text: 1.125rem; // 18px
+$font-size__text--small: 0.8125rem; // 13px
