@@ -28,7 +28,6 @@ const path = require('path');
 const merge = require('webpack-merge');
 
 // Plugins
-const SvgSpritemapWebpackPlugin = require('svg-spritemap-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /*  JavaScript
@@ -142,16 +141,6 @@ const common = {
     rules: [JavaScript(), Images(), Fonts()]
   },
   plugins: [
-    // SVG Spritemap Webpack Plugin
-    new SvgSpritemapWebpackPlugin('images/svg/**/*.svg', {
-      output: {
-        filename: 'images/svg/sprite.svg'
-      },
-      sprite: {
-        prefix: false
-      }
-    }),
-
     // Copy Webpack Plugin
     new CopyWebpackPlugin(settings.copy)
   ]

@@ -56,11 +56,6 @@ module.exports = {
       ======================================================================  */
 
   copy: [
-    // System
-    {
-      from: './src/system',
-      to: '../'
-    },
     // Favicons
     {
       from: './src/assets/images/favicons',
