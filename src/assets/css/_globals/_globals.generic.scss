@@ -1,0 +1,39 @@
+/*  ========================================================================
+    # Globals - Generic
+    ========================================================================  */
+
+/*  HTML
+    ========================================================================  */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  image-rendering: auto;
+  box-sizing: border-box;
+}
+
+/*  Body
+    ========================================================================  */
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: calc-rem(60px) calc-rem(20px);
+  background-color: $color__black;
+  font-family: $font-family__sans-serif;
+  font-size: $font-size__text;
+  font-weight: 400;
+  color: $color__white;
+  text-align: center;
+}
+
+/*  Selection
+    ========================================================================  */
+
+::selection {
+  background-color: $color__accent;
+  color: $color__black;
+  text-shadow: none;
+}
