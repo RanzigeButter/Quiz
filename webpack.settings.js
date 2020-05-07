@@ -45,7 +45,7 @@ module.exports = {
       ======================================================================  */
 
   entries: {
-    app: ['./src/assets/js/main.js', './src/assets/css/main.scss'],
+    app: ['./src/js/main.js', './src/css/main.scss'],
     quiz: './src/quiz/quiz.jsx'
   },
 
@@ -55,7 +55,7 @@ module.exports = {
   copy: [
     // Favicons
     {
-      from: './src/assets/images/favicons',
+      from: './src/images/favicons',
       to: './images/favicons'
     }
   ],
