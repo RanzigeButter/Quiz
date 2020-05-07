@@ -1,5 +1,5 @@
 /*  ========================================================================
-    # Webpack Configuration - Common
+    # Webpack - Common
     ========================================================================  */
 
 /**
@@ -13,7 +13,6 @@
  * Images
  * Fonts
  * Config Common
- * Module Exports
  */
 
 /*  Dependencies
@@ -25,7 +24,6 @@ const settings = require('./webpack.settings.js');
 
 // Modules
 const path = require('path');
-const merge = require('webpack-merge');
 
 // Plugins
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -72,7 +70,7 @@ const JavaScript = () => {
 
 const Images = () => {
   return {
-    test: /\.(jpg|png|gif|svg)$/,
+    test: /\.(jpe?g|png|gif|svg|webp)$/,
     include: path.resolve(__dirname, settings.paths.src.base),
     exclude: /node_modules/,
     use: [
@@ -134,8 +132,7 @@ const common = {
   name: pkg.name,
   entry: settings.entries,
   output: {
-    path: path.resolve(__dirname, settings.paths.dist.base),
-    filename: 'js/[name].min.js'
+    path: path.resolve(__dirname, settings.paths.dist.base)
   },
   module: {
     rules: [JavaScript(), Images(), Fonts()]
@@ -146,7 +143,4 @@ const common = {
   ]
 };
 
-/*  Module Exports
-    ========================================================================  */
-
-module.exports = merge(common);
+module.exports = common;
