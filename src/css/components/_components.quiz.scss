@@ -85,16 +85,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: calc-rem(240px);
+      max-width: calc-rem(360px);
       width: 100%;
       margin: 0 0 calc-rem(20px);
       padding: calc-rem(20px);
       border: calc-rem(2px) solid $color__charade;
       border-radius: calc-rem(3px);
+      line-height: 1.4;
+      letter-spacing: calc-rem(1px);
+      color: $color__grey;
 
       &:hover {
         @include transition__fade-in(0.25s, 0s);
         border-color: $color__accent;
+        color: $color__white;
       }
 
       input {
@@ -108,11 +112,6 @@
         padding: 0;
         opacity: 0;
         cursor: pointer;
-      }
-
-      span {
-        color: $color__grey;
-        letter-spacing: calc-rem(1px);
       }
     }
   }

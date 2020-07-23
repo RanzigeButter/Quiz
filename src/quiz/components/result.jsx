@@ -13,7 +13,7 @@ class Result extends Component {
       return (
         <div className='c-result'>
           <h1>
-            You correctly answered {this.props.score} out of {this.props.data.length}{' '}
+            You correctly answered {this.props.score} out of {this.props.questions.length}{' '}
             questions.
           </h1>
           <p>You did great!</p>
@@ -31,7 +31,7 @@ class Result extends Component {
       return (
         <div className='c-result'>
           <h1>
-            You correctly answered {this.props.score} out of {this.props.data.length}{' '}
+            You correctly answered {this.props.score} out of {this.props.questions.length}{' '}
             questions.
           </h1>
           <p>You can do better than that! Try it again.</p>

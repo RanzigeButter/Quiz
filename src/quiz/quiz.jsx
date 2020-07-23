@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 // Components
-import DataFile from './data.jsx';
+import Data from './data.jsx';
 import Intro from './components/intro.jsx';
 import Questions from './components/questions.jsx';
 import Result from './components/result.jsx';
@@ -18,21 +18,16 @@ import Result from './components/result.jsx';
 class Quiz extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       currentState: 'Intro',
-      isDataLoaded: false,
-      data: [],
+      dataLoaded: false,
+      questions: [],
       score: 0
     };
+
     this.shuffleArray = this.shuffleArray.bind(this);
     this.handleState = this.handleState.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      isDataLoaded: true,
-      data: this.shuffleArray(DataFile)
-    });
   }
 
   shuffleArray(array) {
@@ -44,31 +39,40 @@ class Quiz extends Component {
     return array;
   }
 
+  componentDidMount() {
+    this.setState({
+      dataLoaded: true,
+      questions: this.shuffleArray(Data.questions)
+    });
+  }
+
   handleState(newState, newScore = 0) {
     this.setState({ currentState: newState, score: newScore });
   }
 
   render() {
-    if (this.state.currentState === 'Intro')
-      return <Intro handleState={this.handleState} />;
-    if (this.state.currentState === 'Questions')
-      return (
-        <Questions
-          handleState={this.handleState}
-          shuffleArray={this.shuffleArray}
-          isDataLoaded={this.state.isDataLoaded}
-          data={this.state.data}
-        />
-      );
-    if (this.state.currentState === 'Result')
-      return (
-        <Result
-          handleState={this.handleState}
-          data={this.state.data}
-          score={this.state.score}
-        />
-      );
-    else return <h1>ERROR</h1>;
+    if (this.state.dataLoaded) {
+      if (this.state.currentState === 'Intro') {
+        return <Intro handleState={this.handleState} />;
+      } else if (this.state.currentState === 'Questions') {
+        return (
+          <Questions
+            handleState={this.handleState}
+            shuffleArray={this.shuffleArray}
+            questions={this.state.questions}
+          />
+        );
+      } else if (this.state.currentState === 'Result') {
+        return (
+          <Result
+            handleState={this.handleState}
+            questions={this.state.questions}
+            score={this.state.score}
+          />
+        );
+      }
+    }
+    return <h1>ERROR</h1>;
   }
 }
 
