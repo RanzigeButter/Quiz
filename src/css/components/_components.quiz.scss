@@ -7,8 +7,9 @@
   max-width: 800px;
   width: 100%;
   padding: calc-rem(20px);
-  background-color: $color__black--light;
-  border: calc-rem(1px) solid $color__silver;
+  background-color: $color__midnight;
+  border: calc-rem(1px) solid $color__charade;
+  border-radius: calc-rem(3px);
 
   @include breakpoint(small) {
     padding: calc-rem(40px);
@@ -20,6 +21,7 @@
     margin: calc-rem(40px) 0 0;
     padding: calc-rem(20px) calc-rem(40px);
     background-color: $color__black;
+    border-radius: calc-rem(3px);
     letter-spacing: calc-rem(1px);
     color: $color__white;
 
@@ -77,7 +79,8 @@
     flex-flow: column nowrap;
     align-items: center;
 
-    &-item {
+    &__item {
+      @include transition__fade-out(0.25s, 0s);
       position: relative;
       display: flex;
       justify-content: center;
@@ -86,7 +89,13 @@
       width: 100%;
       margin: 0 0 calc-rem(20px);
       padding: calc-rem(20px);
-      border: calc-rem(2px) solid $color__silver;
+      border: calc-rem(2px) solid $color__charade;
+      border-radius: calc-rem(3px);
+
+      &:hover {
+        @include transition__fade-in(0.25s, 0s);
+        border-color: $color__accent;
+      }
 
       input {
         position: absolute;
@@ -108,20 +117,22 @@
     }
   }
 
-  .progress-bar {
+  .progress {
     position: relative;
     width: 100%;
     height: 28px;
     margin: calc-rem(40px) 0 0;
-    background-color: $color__silver;
+    background-color: $color__charade;
+    border-radius: calc-rem(3px);
 
-    .bar {
+    &__bar {
       @include transition__fade-in(0.2s, 0s);
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       background-color: $color__accent;
+      border-radius: calc-rem(3px);
     }
   }
 }

@@ -58,7 +58,7 @@ class Questions extends Component {
                 .shuffleArray(this.props.data[this.state.currentQuestion - 1]['options'])
                 .map((option, index) => {
                   return (
-                    <label key={index} className='options-item'>
+                    <label key={index} className='options__item'>
                       <input
                         type='button'
                         name='options'
@@ -72,9 +72,9 @@ class Questions extends Component {
                 })}
             </div>
 
-            <div className='progress-bar'>
+            <div className='progress'>
               <div
-                className='bar'
+                className='progress__bar'
                 style={{
                   width: `${(100 / this.props.data.length) * this.state.currentQuestion}%`
                 }}

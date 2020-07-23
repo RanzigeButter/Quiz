@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 
 class Result extends Component {
   render() {
-    if (this.props.score >= 2) {
+    if (this.props.score >= 8) {
       return (
         <div className='c-result'>
           <h1>
