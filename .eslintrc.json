@@ -28,6 +28,7 @@
   },
   "rules": {
     "prettier/prettier": "error",
+    "react/prop-types": 0,
     "arrow-body-style": [2, "always"],
     "block-scoped-var": 1,
     "brace-style": [

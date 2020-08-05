@@ -2,9 +2,19 @@
     # Quiz - Data
     ========================================================================  */
 
-const Data = {
-  intro: '',
-  result: '',
+module.exports = {
+  /*  Intro
+      ======================================================================  */
+
+  intro: {
+    title: 'Welcome',
+    text: 'Here is a little quiz to test your knowledge. Have fun!',
+    button: 'Start Quiz'
+  },
+
+  /*  Questions
+      ======================================================================  */
+
   questions: [
     {
       id: 0,
@@ -226,7 +236,10 @@ const Data = {
         }
       ]
     }
-  ]
-};
+  ],
 
-export default Data;
+  /*  Result
+      ======================================================================  */
+
+  result: ''
+};
