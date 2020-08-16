@@ -15,10 +15,10 @@ import Result from './components/result.jsx';
 const Quiz = () => {
   // Data
   const [dataLoaded, setDataLoaded] = useState(false);
-  const [intro, setIntro] = useState('');
-  const [questions, setQuestions] = useState([]);
-  const [questionsCount, setQuestionsCount] = useState([]);
-  const [result, setResult] = useState('');
+  const [intro, setIntro] = useState();
+  const [questions, setQuestions] = useState();
+  const [questionsCount, setQuestionsCount] = useState(0);
+  const [result, setResult] = useState();
 
   // Status
   const [state, setState] = useState('loading');

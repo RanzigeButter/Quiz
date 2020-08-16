@@ -241,5 +241,12 @@ module.exports = {
   /*  Result
       ======================================================================  */
 
-  result: ''
+  result: {
+    pct0: ':(',
+    pct20: 'You can do better, just try it again.',
+    pct40: 'Not bad.',
+    pct60: 'Nicely done.',
+    pct80: 'Pretty impressive.',
+    pct100: 'A perfect score! Congratulations!'
+  }
 };

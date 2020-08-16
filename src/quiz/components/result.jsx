@@ -6,11 +6,21 @@
 import React from 'react';
 
 const Result = props => {
+  const percent = (100 / props.questionsCount) * props.score;
   let message;
-  if (props.score >= 8) {
-    message = <p>You did great!</p>;
+
+  if (percent === 100) {
+    message = props.result.pct100;
+  } else if (percent >= 80) {
+    message = props.result.pct80;
+  } else if (percent >= 60) {
+    message = props.result.pct60;
+  } else if (percent >= 40) {
+    message = props.result.pct40;
+  } else if (percent >= 20) {
+    message = props.result.pct20;
   } else {
-    message = <p>You can do better than that! Try it again.</p>;
+    message = props.result.pct0;
   }
 
   return (
@@ -18,7 +28,7 @@ const Result = props => {
       <h1>
         You correctly answered {props.score} out of {props.questionsCount} questions.
       </h1>
-      {message}
+      <p>{message}</p>
       <a
         className='c-quiz__button'
         onClick={() => {
