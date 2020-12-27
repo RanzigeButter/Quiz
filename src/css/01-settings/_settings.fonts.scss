@@ -2,60 +2,56 @@
     # Settings - Fonts
     ========================================================================  */
 
-/*  Libre Baskerville
-    ========================================================================  */
+// Libre Baskerville
+// =============================================================================
 
 // Regular
 @font-face {
   font-family: 'Libre Baskerville';
   src:
+    local('Libre Baskerville'),
     url('../fonts/libre-baskerville--regular.woff2') format('woff2'),
     url('../fonts/libre-baskerville--regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
-// 700
-@font-face {
-  font-family: 'Libre Baskerville';
-  src:
-    url('../fonts/libre-baskerville--700.woff2') format('woff2'),
-    url('../fonts/libre-baskerville--700.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-/*  Noto Sans
-    ========================================================================  */
+// Noto Sans
+// =============================================================================
 
 // Regular
 @font-face {
   font-family: 'Noto Sans';
   src:
+    local('Noto Sans'),
     url('../fonts/noto-sans--regular.woff2') format('woff2'),
     url('../fonts/noto-sans--regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 // 700
 @font-face {
   font-family: 'Noto Sans';
   src:
+    local('Noto Sans'),
     url('../fonts/noto-sans--700.woff2') format('woff2'),
     url('../fonts/noto-sans--700.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
-/*  Font Families
-    ========================================================================  */
+// Font Families
+// =============================================================================
 
 $font-family__serif: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
 $font-family__sans-serif: 'Noto Sans', 'Helvetica', 'Arial', sans-serif;
 
-/*  Font Sizes
-    ========================================================================  */
+// Font Sizes
+// =============================================================================
 
 // H1
 $font-size__h1--max: 2rem; // 32px

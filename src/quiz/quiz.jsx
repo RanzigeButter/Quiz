@@ -25,8 +25,8 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [score, setScore] = useState(0);
 
-  /*  Shuffle Array
-      ======================================================================  */
+  // Shuffle Array
+  // ===========================================================================
 
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -44,8 +44,8 @@ const Quiz = () => {
     return array;
   };
 
-  /*  Use Effect
-      ======================================================================  */
+  // Use Effect
+  // ===========================================================================
 
   useEffect(() => {
     setDataLoaded(true);
@@ -56,8 +56,8 @@ const Quiz = () => {
     setState('intro');
   }, []);
 
-  /*  Render Components
-      ======================================================================  */
+  // Render Components
+  // ===========================================================================
 
   if (dataLoaded) {
     if (state === 'intro') {
@@ -91,5 +91,4 @@ const Quiz = () => {
 };
 
 // Render
-const RootElement = document.getElementById('quiz');
-ReactDOM.render(<Quiz />, RootElement);
+ReactDOM.render(<Quiz />, document.getElementById('quiz'));
