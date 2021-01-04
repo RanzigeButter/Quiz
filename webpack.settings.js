@@ -26,7 +26,8 @@ module.exports = {
   // ===========================================================================
 
   urls: {
-    live: 'https://projects.timschneider.xyz/quiz/',
+    dev: '/',
+    prod: 'https://projects.timschneider.xyz/quiz/',
     puplicPath: 'dist/'
   },
 
@@ -74,13 +75,13 @@ module.exports = {
       return process.env.DEVSERVER_HOST || 'localhost';
     },
     port: () => {
-      return process.env.DEVSERVER_PORT || 8080;
+      return parseInt(process.env.DEVSERVER_PORT, 10) || 8080;
     },
     https: () => {
-      return process.env.DEVSERVER_HTTPS || false;
+      return !!process.env.DEVSERVER_HTTPS || false;
     },
     poll: () => {
-      return process.env.DEVSERVER_POLL || false;
+      return !!process.env.DEVSERVER_POLL || false;
     }
   }
 };

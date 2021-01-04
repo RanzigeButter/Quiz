@@ -87,7 +87,7 @@ const SCSS = () => {
 const production = {
   mode: 'production',
   output: {
-    publicPath: settings.urls.live + settings.urls.puplicPath,
+    publicPath: settings.urls.prod + settings.urls.puplicPath,
     filename: 'js/[name].min.[contenthash].js'
   },
   module: {

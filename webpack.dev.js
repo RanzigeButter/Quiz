@@ -41,7 +41,7 @@ const devServer = () => {
     host: settings.developmentServer.host(),
     port: settings.developmentServer.port(),
     https: !!parseInt(settings.developmentServer.https(), 10),
-    contentBase: path.resolve(__dirname, settings.paths.templates),
+    contentBase: path.resolve(__dirname, settings.paths.src.base),
     watchContentBase: true,
     watchOptions: {
       poll: settings.developmentServer.poll(),
@@ -51,6 +51,7 @@ const devServer = () => {
     hot: true,
     hotOnly: true,
     quiet: true,
+    historyApiFallback: true,
     disableHostCheck: true,
     headers: {
       'Access-Control-Allow-Origin': '*'
@@ -129,7 +130,7 @@ const development = {
   mode: 'development',
   devServer: devServer(),
   output: {
-    publicPath: settings.developmentServer.public() + '/',
+    publicPath: settings.developmentServer.public() + settings.urls.dev,
     filename: 'js/[name].min.[hash].js'
   },
   module: {
