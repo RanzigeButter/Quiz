@@ -60,7 +60,8 @@ module.exports = {
     // Favicons
     {
       from: './src/images/favicons',
-      to: './images/favicons'
+      to: './images/favicons',
+      noErrorOnMissing: true
     }
   ],
 
